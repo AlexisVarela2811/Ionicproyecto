@@ -1,0 +1,50 @@
+<ion-content [fullscreen]="true">
+  <div class="texto ion-padding">
+    <ion-title class="titulo">Bienvenido de nuevo</ion-title>
+    <p class="subtitulo">Inicia sesión para acceder a tu cuenta</p>
+  </div>
+
+  <form>
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input
+          autofocus
+          label="Usuario"
+          name="usuario"
+          typer="text"
+          placeholder="Ingrese de usuario"
+          class="input"
+          minlength="3"
+          maxlength="8"
+          [(ngModel)]="usuario"
+        ></ion-input>
+        <ion-icon name="person-outline" slot="end"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Contraseña"
+          name="password"
+          pattern="[0-9]{4}"
+          minlength="4"
+          maxlength="4"
+          type="password"
+          placeholder="Ingrese su contraseña"
+          class="input"
+          [(ngModel)]="password"
+        ></ion-input>
+        <ion-icon name="lock-closed-outline" slot="end"></ion-icon>
+      </ion-item>
+      <div class="contraseña-txt">
+        <a href="#">¿Has olvidado tu contraseña?</a>
+      </div>
+      <div class="registro-txt">
+        <p>¿Eres nuevo? <a href="#">Regístrate</a></p>
+      </div>
+    </div>
+    <div>
+      <ion-button shape="block" (click)="iniciarSession()" 
+        >Iniciar sesión</ion-button
+      >
+    </div>
+  </form>
+</ion-content>

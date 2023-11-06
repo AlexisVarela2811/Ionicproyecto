@@ -1,0 +1,62 @@
+<ion-content [fullscreen]="true">
+  <div class="texto ion-padding">
+    <ion-title class="titulo">Bienvenido de nuevo!</ion-title>
+    <ion-label class="titulo">Usuario: {{usuarioRecibido}}</ion-label>
+    <p class="subtitulo">Informacion Adicional</p>
+  </div>
+
+  <form>
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input
+          label="Nombre"
+          id="nombre"
+          placeholder="Ingrese su nombre"
+          class="input"
+        ></ion-input>
+        <ion-icon name="person-outline" slot="end"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Apellido"
+          id="apellido"
+          placeholder="Ingrese su apellido"
+          class="input"
+        ></ion-input>
+        <ion-icon name="person-outline" slot="end"></ion-icon>
+      </ion-item>   
+      
+        <ion-item>
+          <ion-select label="Nivel educacional" id="nivel" aria-label="fruit" placeholder="Seleccione Nivel">
+            <ion-select-option value="basica">Educación  Básica</ion-select-option>
+            <ion-select-option value="media">Educación Media</ion-select-option>
+            <ion-select-option value="superior">Educación Superior</ion-select-option>
+          </ion-select>
+        </ion-item>
+      
+
+      <mat-form-field id="fecha" class="example-full-width">
+        <mat-label>Fecha de nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+
+    </div>
+    <div class="boton-center">
+      <ion-button shape="default"
+      (click)="limpiarInputs()"
+        >Limpiar</ion-button>
+      <ion-button shape="default"
+      (click)="mostrarInformacion()"
+        >Mostrar</ion-button>
+    </div>
+
+    <ion-fab vertical="bottom" horizontal="end" class="ion-padding">
+      <ion-fab-button [routerLink]="['/login']" color="light">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
+</ion-content>
