@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NavController } from '@ionic/angular';
+import { ServicioDBService } from 'src/app/services/servicio-db.service';
 
 
 @Component({
@@ -7,21 +9,34 @@ import { NavigationExtras, Router } from '@angular/router';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
+  loginForm: FormGroup;
 
-  usuario: string = "";
-  password: string = "";
-  constructor(private router: Router) { }
+  usNombre = "";
+  usPassword = "";
 
-  ngOnInit() {
+  constructor(private formBuilder: FormBuilder, private navCtrl: NavController, private servicioDB: ServicioDBService) {
+    this.loginForm = this.formBuilder.group({
+      nombre: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    });
+
+    this.loginForm.get('nombre')?.valueChanges.subscribe(value => this.usNombre = value);
+    this.loginForm.get('password')?.valueChanges.subscribe(value => this.usPassword = value);
   }
 
-  iniciarSession() {
-    let navigateExtras:NavigationExtras={
-      state:{
-        usuarioEnviado:this.usuario
-      }
+  iniciarSesion() {
+    if (this.loginForm.valid) {
+      this.servicioDB.cuentasUsuarios(this.usNombre, this.usPassword).then(usuario => {
+        if (usuario) {
+          // Usuario encontrado, puedes continuar con el inicio de sesión
+          this.servicioDB.presentAlert("Inicio de sesion correctamente ");
+          this.navCtrl.navigateForward('/menu'); // Redirige a la página del menú después del inicio de sesión
+        } else {
+          // Usuario no encontrado, mostrar mensaje de error
+          this.servicioDB.presentAlert("Usuario no encontrado");
+        }
+      });
     }
-    this.router.navigate(['/home'],navigateExtras);
   }
 }

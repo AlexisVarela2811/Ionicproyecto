@@ -1,0 +1,17 @@
+<ion-content [fullscreen]="true">
+  <div class="logo-container">
+    <ion-img src="assets/imagenes/logo.png" alt="logo de Group Dine"></ion-img>
+  </div>
+  <span class="container">
+    <h1 class="titulo ion-text-center">¡Bienvenido a Group Dine!</h1>
+    <p class="descripcion ion-text-center">
+      Simplificamos la división de cuentas en tus salidas con amigos. Comer
+      juntos nunca fue tan fácil
+    </p>
+  </span>
+  <div class="ion-text-center">
+    <ion-button  [routerLink]="['/login']"class="custom-button">Inicia sesión</ion-button>
+    <br>
+    <p>No tienes cuenta?<a [routerLink]="['/registro']" >Registrate</a></p>
+  </div> 
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-content [fullscreen]="true">
+  <div class="logo-container">
+    <ion-img src="assets/imagenes/logo.png" alt="logo de groupdine"></ion-img>
+  </div>
+  <div class="container-form">
+    <div class="container-botones">
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle [routerLink]="['/login']" class="mat-button-toggle-1"  value="login">Inicia sesión</mat-button-toggle>
+        <mat-button-toggle [routerLink]="['/registro']" class="mat-button-toggle-2" value="registro">Registro</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <h1 class="titulo ion-text-center">¡Regístrate Gratis!</h1>
+    <form [formGroup]="registroForm">
+      <ion-item>
+        <ion-label position="stacked" aria-label="Usuario">Usuario</ion-label>
+        <ion-input formControlName="nombre" type="text" placeholder="Ingrese su nombre de usuario"></ion-input>
+      </ion-item>
+      <div *ngIf="registroForm.get('nombre')?.hasError('required')">
+        <p class="error-message">Usuario es requerido.</p>
+      </div>
+      <div *ngIf="registroForm.get('nombre')?.hasError('minlength')">
+        <p class="error-message">El usuario debe tener al menos 3 caracteres.</p>
+      </div>
+      <div *ngIf="registroForm.get('nombre')?.hasError('maxlength')">
+        <p class="error-message">El usuario no debe exceder los 8 caracteres.</p>
+      </div>
+
+      <ion-item>
+        <ion-label position="stacked" aria-label="Email">Email</ion-label>
+        <ion-input formControlName="email" type="email" placeholder="Ingrese su dirección de correo electrónico"></ion-input>
+      </ion-item>
+      <div *ngIf="registroForm.get('email')?.hasError('required')">
+        <p class="error-message">Email es requerido.</p>
+      </div>
+      <div *ngIf="registroForm.get('email')?.hasError('email')">
+        <p class="error-message">El formato de email es inválido.</p>
+      </div>
+
+      <ion-item>
+        <ion-label position="stacked" aria-label="Contraseña">Contraseña</ion-label>
+        <ion-input formControlName="password" type="password" placeholder="Ingrese una contraseña de 4 dígitos numéricos"></ion-input>
+      </ion-item>
+      <div *ngIf="registroForm.get('password')?.hasError('required')">
+        <p class="error-message">Contraseña es requerida.</p>
+      </div>
+      <div *ngIf="registroForm.get('password')?.hasError('pattern')">
+        <p class="error-message">La contraseña debe tener 4 dígitos numéricos.</p>
+      </div>
+      <div *ngIf="registroForm.get('password')?.hasError('minlength')">
+        <p class="error-message">La contraseña debe tener al menos 4 caracteres.</p>
+      </div>
+      <div *ngIf="registroForm.get('password')?.hasError('maxlength')">
+        <p class="error-message">La contraseña no debe exceder los 4 caracteres.</p>
+      </div>
+
+      <ion-button shape="block" (click)="registrarse()">Registrarse</ion-button>
+      <!-- Puedes agregar mensajes de éxito aquí si es necesario -->
+    </form>
+  </div>
+</ion-content>
+

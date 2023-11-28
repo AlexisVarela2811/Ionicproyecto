@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './LoginPage';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule
+    LoginPageRoutingModule,
+    MatButtonToggleModule,
+    ReactiveFormsModule
   ],
   declarations: [LoginPage]
 })

@@ -1,0 +1,79 @@
+ion-content {
+    --ion-background-color: #FFA030; 
+    position: relative;
+}
+
+.logo-container {
+    background: #FF8B02; 
+    text-align: center;
+    box-shadow: 0px 0px 50px 0px #000 inset;
+} 
+
+.container-form {
+    width: auto;
+    max-width: 100%;
+    margin: 10vh 20px; /* Margen superior de 10vh, margen izquierdo y derecho de 20px */
+    padding: 20px;
+    border-radius: 34px;
+    background: #FF7D04;
+    box-shadow: 0px 0px 10px 0px #000 inset;
+}
+
+.titulo{
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline
+}
+
+.container-botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Estilo para los botones individuales */
+.mat-button-toggle-1 {
+  color: #000000; /* Color de texto */
+  background-color: #ffffff; /* Color de fondo */
+  border-radius: 10px;
+}
+
+/* Estilo para los botones individuales */
+.mat-button-toggle-2 {
+  color: #000000; /* Color de texto */
+  background-color: #747272; /* Color de fondo */
+  border-radius: 10px;
+}
+
+/* Estilo para el grupo de botones */
+.mat-button-toggle-group {
+  border: none;
+}
+
+ion-input {
+  border: none;
+  background: transparent;
+  border: none;
+  color: #000000; 
+}
+
+ion-input:focus {
+  border: none; 
+  box-shadow: none; 
+}
+
+ion-item{
+  --background:#FF7D04;
+  border-radius:10px ;
+  margin-bottom:16px;
+}
+

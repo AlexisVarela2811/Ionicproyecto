@@ -1,0 +1,62 @@
+ion-content {
+  --ion-background-color: #FFA030; 
+  position: relative;
+}
+
+.logo-container {
+  background: #FF8B02; 
+  text-align: center;
+  box-shadow: 0px 0px 50px 0px #000 inset;
+} 
+
+
+  
+  .titulo {
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    line-height: normal;
+  }
+  
+  .descripcion {
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 540;
+    text-align: center;
+  }
+
+ .container {
+   justify-content: space-evenly;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+  }
+
+  ion-button.custom-button {
+    --background: #ffffff;
+    --background-hover: #b6b2b2;
+    --background-activated: #b6b2b2;
+    --background-focused: #b6b2b2;
+    --border-radius: 20px;
+    width: 249px;
+    height: 45px;
+    flex-shrink: 0;
+    color: #000; 
+    text-align: center; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline
+}

@@ -1,50 +1,50 @@
 <ion-content [fullscreen]="true">
-  <div class="texto ion-padding">
-    <ion-title class="titulo">Bienvenido de nuevo</ion-title>
-    <p class="subtitulo">Inicia sesión para acceder a tu cuenta</p>
+  <div class="logo-container">
+    <ion-img src="assets/imagenes/logo.png" alt="logo de groupdine"></ion-img>
   </div>
 
-  <form>
-    <div class="ion-padding">
-      <ion-item>
-        <ion-input
-          autofocus
-          label="Usuario"
-          name="usuario"
-          typer="text"
-          placeholder="Ingrese de usuario"
-          class="input"
-          minlength="3"
-          maxlength="8"
-          [(ngModel)]="usuario"
-        ></ion-input>
-        <ion-icon name="person-outline" slot="end"></ion-icon>
-      </ion-item>
-      <ion-item>
-        <ion-input
-          label="Contraseña"
-          name="password"
-          pattern="[0-9]{4}"
-          minlength="4"
-          maxlength="4"
-          type="password"
-          placeholder="Ingrese su contraseña"
-          class="input"
-          [(ngModel)]="password"
-        ></ion-input>
-        <ion-icon name="lock-closed-outline" slot="end"></ion-icon>
-      </ion-item>
+  <div class="container-form">
+    <div class="container-botones">
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle [routerLink]="['/login']" class="mat-button-toggle-1" value="login">Inicia sesión</mat-button-toggle>
+        <mat-button-toggle [routerLink]="['/registro']" class="mat-button-toggle-2" value="registro">Registro</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+    <h1 class="titulo ion-text-center">¡Bienvenido nuevamente!</h1>
+    <form [formGroup]="loginForm">
+      <div>
+        <ion-item>
+          <ion-input
+            autofocus
+            formControlName="nombre"
+            type="text"
+            placeholder="Ingrese de usuario"
+            class="input"
+            minlength="3"
+            maxlength="8"
+          ></ion-input>
+          <ion-icon name="person-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            formControlName="password"
+            pattern="[0-9]{4}"
+            minlength="4"
+            maxlength="4"
+            type="password"
+            placeholder="Ingrese su contraseña"
+            class="input"
+          ></ion-input>
+          <ion-icon name="lock-closed-outline" slot="end"></ion-icon>
+        </ion-item>
+      </div>
+      <div>
+        <ion-button shape="block" (click)="iniciarSesion()">Iniciar sesión</ion-button>
+      </div>
       <div class="contraseña-txt">
         <a href="#">¿Has olvidado tu contraseña?</a>
       </div>
-      <div class="registro-txt">
-        <p>¿Eres nuevo? <a href="#">Regístrate</a></p>
-      </div>
-    </div>
-    <div>
-      <ion-button shape="block" (click)="iniciarSession()" 
-        >Iniciar sesión</ion-button
-      >
-    </div>
-  </form>
+    </form>
+  </div>
 </ion-content>

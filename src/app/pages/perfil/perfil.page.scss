@@ -1,0 +1,44 @@
+ion-content {
+    --ion-background-color: #FFA030; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+  }
+
+ion-item{
+    --background:#FF7D04;
+    border-radius:10px ;
+    margin-bottom:16px;
+}
+
+.texto{
+    margin-top:130px;
+    margin-bottom:30px;
+    text-align:center;
+    .subtitulo{
+        color: gray;
+        font-size: 16px;
+    }
+    .titulo{
+        text-align: center;
+        color: black;
+        font-family: 'Arial';
+        font-weight: bold; 
+        font-size: 20px;
+    }
+}
+
+.boton-center{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+
+.formulario{
+    flex-shrink: 0;
+    border-radius: 34px;
+    background: #FF7D04;
+}

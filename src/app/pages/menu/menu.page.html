@@ -1,0 +1,33 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/inicio"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+      <ion-searchbar (ionChange)="filtrarProductos($event)" placeholder="Buscar productos"></ion-searchbar>
+      <ion-button [routerLink]="'/perfil'" fill="clear">
+        <div class="avatar">
+          <ion-img src="assets/icon/avatar.png"></ion-img>
+        </div>
+      </ion-button>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let producto of filteredMeals">
+      <ion-thumbnail slot="start">
+        <img [src]="producto.strMealThumb" alt="{{ producto.strMeal }}" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ producto.strMeal }}</h2>
+        <p>{{ producto.strCategory }}</p>
+        <ion-note class="price">{{ producto.price | currency:'CLP':'symbol' }}</ion-note>
+      </ion-label>
+      <ion-button (click)="agregarAlCarrito(producto)">Agregar al Carrito</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click)="irAlCarrito()">Ir al Carrito</ion-button>
+
+</ion-content>

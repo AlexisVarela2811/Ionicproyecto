@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Carrito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let producto of productos">
+      <ion-card-content>
+        <ion-thumbnail slot="start">
+          <img [src]="producto.strMealThumb" alt="{{ producto.strMeal }}" />
+        </ion-thumbnail>
+        <ion-card-title>{{ producto.strMeal }}</ion-card-title>
+        <ion-label class="price">{{ producto.price | currency:'CLP':'symbol' }}</ion-label>
+        <ion-button color="danger" (click)="eliminarDelCarrito(producto)">Eliminar</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-item>
+    <ion-label>Precio Total:</ion-label>
+    <ion-label class="price">{{ precioTotal | currency:'CLP':'symbol' }}</ion-label>
+  </ion-item>
+</ion-content>
