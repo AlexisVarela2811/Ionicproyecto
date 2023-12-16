@@ -15,7 +15,7 @@ export class LoginPage {
   usNombre = "";
   usPassword = "";
 
-  constructor(private formBuilder: FormBuilder, private navCtrl: NavController, private servicioDB: ServicioDBService) {
+  constructor(private formBuilder: FormBuilder, private navCtrl: NavController, public servicioDB: ServicioDBService) {
     this.loginForm = this.formBuilder.group({
       nombre: ['', [Validators.required]],
       password: ['', [Validators.required]],

@@ -26,7 +26,7 @@ export class RegistroPage {
       password: ['', [Validators.required, Validators.pattern('[0-9]{4}'), Validators.minLength(4), Validators.maxLength(4)]]
     });
 
-    this.registroForm.get('usuario')?.valueChanges.subscribe(value => this.usNombre = value);
+    this.registroForm.get('nombre')?.valueChanges.subscribe(value => this.usNombre = value);
     this.registroForm.get('email')?.valueChanges.subscribe(value => this.usEmail = value);
     this.registroForm.get('password')?.valueChanges.subscribe(value => this.usPassword = value);
   }

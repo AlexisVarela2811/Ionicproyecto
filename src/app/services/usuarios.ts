@@ -1,7 +1,7 @@
 export class Usuarios {
-    id_usuario = "";
-    nombre= "";
-    correo= "";
-    contraseña= "";
+    id_usuario :any;
+    nombre:any;
+    correo:any;
+    contraseña:any;
 }
 
